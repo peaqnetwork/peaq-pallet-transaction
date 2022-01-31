@@ -5,7 +5,7 @@ The Peaq-Pallet-Transaction is a message bridge to allow the provider/consumer t
 
 There are two scenarios here.
 1. The consumer sends `service_requested` Extrinsic and the provider parsed the event data on receiving the event. The parsed data is used by the provider to check the Multi-sig wallet balance if it's sufficient to start the EV charging.
-2. The provider sends the `service_delivered` Extrinsic, and further operations is performed when the target user gets the event. For example, approving a multi-sig transaction.
+2. The provider sends the `service_delivered` Extrinsic, and further operations are performed when the target user receives the event. For example, approving a multi-sig transaction.
 
 In the future, we'll add types of message bridge between the provider and consumer to our system.
 
