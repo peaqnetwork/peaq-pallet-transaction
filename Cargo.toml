@@ -20,21 +20,21 @@ version = '2.0.0'
 
 [dependencies.frame-benchmarking]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
+git = 'https://github.com/peaqnetwork/substrate'
 optional = true
-tag = 'monthly-2021-10'
+branch = 'peaq-polkadot-v0.9.16'
 version = '4.0.0-dev'
 
 [dependencies.frame-support]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-10'
+git = 'https://github.com/peaqnetwork/substrate'
+branch = 'peaq-polkadot-v0.9.16'
 version = '4.0.0-dev'
 
 [dependencies.frame-system]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-10'
+git = 'https://github.com/peaqnetwork/substrate'
+branch = 'peaq-polkadot-v0.9.16'
 version = '4.0.0-dev'
 
 [dependencies.scale-info]
@@ -44,26 +44,26 @@ version = '1.0'
 
 [dependencies.sp-core]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-10'
-version = '4.0.0-dev'
+git = 'https://github.com/peaqnetwork/substrate'
+branch = 'peaq-polkadot-v0.9.16'
+version = '4.1.0-dev'
 
 [dependencies.sp-io]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-10'
+git = 'https://github.com/peaqnetwork/substrate'
+branch = 'peaq-polkadot-v0.9.16'
 version = '4.0.0-dev'
 
 [dependencies.sp-runtime]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-10'
-version = '4.0.0-dev'
+git = 'https://github.com/peaqnetwork/substrate'
+branch = 'peaq-polkadot-v0.9.16'
+version = '4.1.0-dev'
 
 [dependencies.pallet-balances]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
-tag = 'monthly-2021-10'
+git = 'https://github.com/peaqnetwork/substrate'
+branch = 'peaq-polkadot-v0.9.16'
 version = '4.0.0-dev'
 
 [features]
