@@ -3,7 +3,7 @@
 use super::*;
 
 use crate::Pallet as TransactionPallet;
-use frame_benchmarking::{benchmarks, impl_benchmark_test_suite, whitelisted_caller};
+use frame_benchmarking::{benchmarks, impl_benchmark_test_suite, account};
 use frame_system::{Pallet as System, RawOrigin};
 use crate::structs::*;
 use sp_io::hashing::blake2_256;
@@ -16,21 +16,21 @@ fn assert_last_event<T: Config>(generic_event: <T as Config>::Event) {
 
 benchmarks! {
     service_requested {
+        let provider : T::AccountId = account("provider", 0, 0);
+        let consumer : T::AccountId = account("consumer", 0, 0);
         let token_deposited = BalanceOf::<T>::from(100_000u32);
-        let provider: T::AccountId = whitelisted_caller();
-        let caller = whitelisted_caller();
-    }: _(RawOrigin::Signed(caller), provider.clone(), token_deposited)
+    }: _(RawOrigin::Signed(consumer.clone()), provider.clone().into(), token_deposited)
     verify {
         assert_last_event::<T>(Event::<T>::ServiceRequested {
-            consumer: whitelisted_caller(),
-            provider,
+            provider: provider.into(),
+            consumer: consumer.into(),
             token_deposited
         }.into());
     }
 
     service_delivered {
-        let provider: T::AccountId = whitelisted_caller();
-        let caller = whitelisted_caller();
+        let provider : T::AccountId = account("provider", 0, 0);
+        let consumer : T::AccountId = account("consumer", 0, 0);
 
 		let info = DeliveredInfo::<BalanceOf::<T>, T::Hash, T::BlockNumber> {
 			token_num: BalanceOf::<T>::from(25u32),
@@ -39,11 +39,11 @@ benchmarks! {
 			call_hash: blake2_256(b"call hash"),
 		};
 
-    }: _(RawOrigin::Signed(caller), provider.clone(), info.clone(), info.clone())
+    }: _(RawOrigin::Signed(provider.clone()), consumer.clone().into(), info.clone(), info.clone())
     verify {
         assert_last_event::<T>(Event::<T>::ServiceDelivered {
-            consumer: whitelisted_caller(),
-            provider: whitelisted_caller(),
+            consumer: consumer.into(),
+            provider: provider.into(),
             refund_info: info.clone(),
             spent_info: info.clone(),
         }.into());
