@@ -17,6 +17,10 @@ git = 'https://github.com/peaqnetwork/substrate'
 branch = 'peaq-polkadot-v0.9.19'
 default-features = false
 
+# Fix vulnerable
+[dependencies.regex]
+version = "1.5.5"
+
 [dependencies.codec]
 default-features = false
 features = ['derive']
