@@ -32,12 +32,12 @@ benchmarks! {
         let provider : T::AccountId = account("provider", 0, 0);
         let consumer : T::AccountId = account("consumer", 0, 0);
 
-		let info = DeliveredInfo::<BalanceOf::<T>, T::Hash, T::BlockNumber> {
-			token_num: BalanceOf::<T>::from(25u32),
-			tx_hash: T::Hashing::hash_of(&blake2_256(b"tx hash")),
-			time_point: TransactionPallet::<T>::now(),
-			call_hash: blake2_256(b"call hash"),
-		};
+        let info = DeliveredInfo::<BalanceOf::<T>, T::Hash, T::BlockNumber> {
+            token_num: BalanceOf::<T>::from(25u32),
+            tx_hash: T::Hashing::hash_of(&blake2_256(b"tx hash")),
+            time_point: TransactionPallet::<T>::now(),
+            call_hash: blake2_256(b"call hash"),
+        };
 
     }: _(RawOrigin::Signed(provider.clone()), consumer.clone().into(), info.clone(), info.clone())
     verify {
