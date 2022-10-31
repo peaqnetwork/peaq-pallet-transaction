@@ -1515,7 +1515,7 @@ dependencies = [
 
 [[package]]
 name = "peaq-pallet-transaction"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
  "frame-benchmarking",
  "frame-support",
