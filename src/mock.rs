@@ -75,6 +75,7 @@ impl pallet_balances::Config for Test {
 impl peaq_pallet_transaction::Config for Test {
 	type Event = Event;
 	type Currency = Balances;
+	type WeightInfo = peaq_pallet_transaction::weights::SubstrateWeight<Test>;
 }
 
 // Build genesis storage according to the mock runtime.
