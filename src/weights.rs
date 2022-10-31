@@ -43,9 +43,9 @@ pub trait WeightInfo {
 pub struct SubstrateWeight<T>(PhantomData<T>);
 impl<T: frame_system::Config> WeightInfo for SubstrateWeight<T> {
 	fn service_requested() -> Weight {
-		(10_850_000 as Weight)
+		Weight::from_ref_time(10_850_000 as u64)
 	}
 	fn service_delivered() -> Weight {
-		(11_512_000 as Weight)
+		Weight::from_ref_time(11_512_000 as u64)
 	}
 }
