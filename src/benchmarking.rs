@@ -2,12 +2,12 @@
 
 use super::*;
 
-use crate::Pallet as TransactionPallet;
-use frame_benchmarking::{benchmarks, impl_benchmark_test_suite, account};
-use frame_system::{Pallet as System, RawOrigin};
 use crate::structs::*;
-use sp_io::hashing::blake2_256;
+use crate::Pallet as TransactionPallet;
+use frame_benchmarking::{account, benchmarks, impl_benchmark_test_suite};
 use frame_support::sp_runtime::traits::Hash;
+use frame_system::{Pallet as System, RawOrigin};
+use sp_io::hashing::blake2_256;
 
 /// Assert that the last event equals the provided one.
 fn assert_last_event<T: Config>(generic_event: <T as Config>::Event) {
