@@ -41,14 +41,14 @@ fn service_delivered_success() {
 		};
 
 		assert_ok!(TransactionModule::service_delivered(
-			Origin::signed(1), 2, refund_info.clone(), spent_info.clone()));
+			Origin::signed(1), 2, refund_info, spent_info));
 
 		System::assert_last_event(
 			peaq_pallet_transaction::Event::ServiceDelivered {
 				provider: 1,
 				consumer: 2,
-				refund_info: refund_info.clone(),
-				spent_info: spent_info.clone(),
+				refund_info,
+				spent_info,
 			}
 			.into(),
 		);

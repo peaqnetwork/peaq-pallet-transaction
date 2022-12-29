@@ -19,11 +19,11 @@ benchmarks! {
         let provider : T::AccountId = account("provider", 0, 0);
         let consumer : T::AccountId = account("consumer", 0, 0);
         let token_deposited = BalanceOf::<T>::from(100_000u32);
-    }: _(RawOrigin::Signed(consumer.clone()), provider.clone().into(), token_deposited)
+    }: _(RawOrigin::Signed(consumer.clone()), provider.clone(), token_deposited)
     verify {
         assert_last_event::<T>(Event::<T>::ServiceRequested {
-            provider: provider.into(),
-            consumer: consumer.into(),
+            provider,
+            consumer,
             token_deposited
         }.into());
     }
@@ -39,13 +39,13 @@ benchmarks! {
             call_hash: blake2_256(b"call hash"),
         };
 
-    }: _(RawOrigin::Signed(provider.clone()), consumer.clone().into(), info.clone(), info.clone())
+    }: _(RawOrigin::Signed(provider.clone()), consumer.clone(), info, info)
     verify {
         assert_last_event::<T>(Event::<T>::ServiceDelivered {
-            consumer: consumer.into(),
-            provider: provider.into(),
-            refund_info: info.clone(),
-            spent_info: info.clone(),
+            consumer,
+            provider,
+            refund_info: info,
+            spent_info: info,
         }.into());
     }
 }
@@ -56,12 +56,12 @@ mod tests {
     use frame_support::sp_io::TestExternalities;
 
     pub fn new_test_ext() -> TestExternalities {
-        mock::ExternalityBuilder::build()
+        mock::new_test_ext()
     }
 }
 
 impl_benchmark_test_suite!(
     Pallet,
     crate::benchmarking::tests::new_test_ext(),
-    crate::mock::TestRuntime,
+    crate::mock::Test,
 );
