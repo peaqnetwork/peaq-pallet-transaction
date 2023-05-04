@@ -4,7 +4,7 @@ use super::*;
 
 use crate::structs::*;
 use crate::Pallet as TransactionPallet;
-use frame_benchmarking::{account, benchmarks, impl_benchmark_test_suite};
+use frame_benchmarking::v1::{account, benchmarks, impl_benchmark_test_suite};
 use frame_support::sp_runtime::traits::Hash;
 use frame_system::{Pallet as System, RawOrigin};
 use sp_io::hashing::blake2_256;

@@ -13,7 +13,7 @@ fn service_requested_success() {
     new_test_ext().execute_with(|| {
         // Dispatch a signed extrinsic.
         assert_ok!(TransactionModule::service_requested(
-            Origin::signed(1),
+            RuntimeOrigin::signed(1),
             2,
             42
         ));
@@ -45,7 +45,7 @@ fn service_delivered_success() {
         };
 
         assert_ok!(TransactionModule::service_delivered(
-            Origin::signed(1),
+            RuntimeOrigin::signed(1),
             2,
             refund_info,
             spent_info
