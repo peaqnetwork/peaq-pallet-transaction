@@ -10,7 +10,7 @@ use frame_system::{Pallet as System, RawOrigin};
 use sp_io::hashing::blake2_256;
 
 /// Assert that the last event equals the provided one.
-fn assert_last_event<T: Config>(generic_event: <T as Config>::Event) {
+fn assert_last_event<T: Config>(generic_event: <T as Config>::RuntimeEvent) {
     System::<T>::assert_last_event(generic_event.into());
 }
 
