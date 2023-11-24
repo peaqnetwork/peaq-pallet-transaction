@@ -69,7 +69,11 @@ impl pallet_balances::Config for Test {
     type MaxLocks = ();
     type MaxReserves = ();
     type ReserveIdentifier = [u8; 8];
+    type FreezeIdentifier = ();
     type WeightInfo = ();
+    type MaxHolds = ();
+    type HoldIdentifier = ();
+    type MaxFreezes = ();
 }
 
 impl peaq_pallet_transaction::Config for Test {

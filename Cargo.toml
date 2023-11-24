@@ -1,6 +1,6 @@
 [package]
 name = 'peaq-pallet-transaction'
-version = '0.0.3'
+version = '0.1.0'
 description = 'A Transaction pallet as a message bridge for escrow wallet implementation.'
 authors = ['peaq network <https://github.com/peaqnetwork>']
 homepage = 'https://peaq.network/'
@@ -14,7 +14,7 @@ targets = ['x86_64-unknown-linux-gnu']
 
 [dependencies.sp-std]
 git = 'https://github.com/peaqnetwork/substrate'
-branch = 'peaq-polkadot-v0.9.38'
+branch = 'peaq-polkadot-v0.9.43'
 default-features = false
 
 [dependencies.codec]
@@ -27,17 +27,17 @@ version = '3.2.2'
 default-features = false
 git = 'https://github.com/peaqnetwork/substrate'
 optional = true
-branch = 'peaq-polkadot-v0.9.38'
+branch = 'peaq-polkadot-v0.9.43'
 
 [dependencies.frame-support]
 default-features = false
 git = 'https://github.com/peaqnetwork/substrate'
-branch = 'peaq-polkadot-v0.9.38'
+branch = 'peaq-polkadot-v0.9.43'
 
 [dependencies.frame-system]
 default-features = false
 git = 'https://github.com/peaqnetwork/substrate'
-branch = 'peaq-polkadot-v0.9.38'
+branch = 'peaq-polkadot-v0.9.43'
 
 [dependencies.scale-info]
 default-features = false
@@ -47,22 +47,22 @@ version = '2.1.1'
 [dependencies.sp-core]
 default-features = false
 git = 'https://github.com/peaqnetwork/substrate'
-branch = 'peaq-polkadot-v0.9.38'
+branch = 'peaq-polkadot-v0.9.43'
 
 [dependencies.sp-io]
 default-features = false
 git = 'https://github.com/peaqnetwork/substrate'
-branch = 'peaq-polkadot-v0.9.38'
+branch = 'peaq-polkadot-v0.9.43'
 
 [dependencies.sp-runtime]
 default-features = false
 git = 'https://github.com/peaqnetwork/substrate'
-branch = 'peaq-polkadot-v0.9.38'
+branch = 'peaq-polkadot-v0.9.43'
 
 [dependencies.pallet-balances]
 default-features = false
 git = 'https://github.com/peaqnetwork/substrate'
-branch = 'peaq-polkadot-v0.9.38'
+branch = 'peaq-polkadot-v0.9.43'
 
 [features]
 default = ['std']
