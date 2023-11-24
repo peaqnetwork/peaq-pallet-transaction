@@ -79,7 +79,7 @@ impl pallet_balances::Config for Test {
 impl peaq_pallet_transaction::Config for Test {
     type RuntimeEvent = RuntimeEvent;
     type Currency = Balances;
-    type WeightInfo = peaq_pallet_transaction::weights::SubstrateWeight<Test>;
+    type WeightInfo = peaq_pallet_transaction::weights::WeightInfo<Test>;
 }
 
 // Build genesis storage according to the mock runtime.
