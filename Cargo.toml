@@ -12,57 +12,17 @@ repository = 'https://github.com/peaqnetwork/peaq-pallet-transaction'
 [package.metadata.docs.rs]
 targets = ['x86_64-unknown-linux-gnu']
 
-[dependencies.sp-std]
-git = 'https://github.com/peaqnetwork/substrate'
-branch = 'peaq-polkadot-v0.9.43'
-default-features = false
-
-[dependencies.codec]
-default-features = false
-features = ['derive']
-package = 'parity-scale-codec'
-version = '3.2.2'
-
-[dependencies.frame-benchmarking]
-default-features = false
-git = 'https://github.com/peaqnetwork/substrate'
-optional = true
-branch = 'peaq-polkadot-v0.9.43'
-
-[dependencies.frame-support]
-default-features = false
-git = 'https://github.com/peaqnetwork/substrate'
-branch = 'peaq-polkadot-v0.9.43'
-
-[dependencies.frame-system]
-default-features = false
-git = 'https://github.com/peaqnetwork/substrate'
-branch = 'peaq-polkadot-v0.9.43'
-
-[dependencies.scale-info]
-default-features = false
-features = ['derive']
-version = '2.1.1'
-
-[dependencies.sp-core]
-default-features = false
-git = 'https://github.com/peaqnetwork/substrate'
-branch = 'peaq-polkadot-v0.9.43'
-
-[dependencies.sp-io]
-default-features = false
-git = 'https://github.com/peaqnetwork/substrate'
-branch = 'peaq-polkadot-v0.9.43'
-
-[dependencies.sp-runtime]
-default-features = false
-git = 'https://github.com/peaqnetwork/substrate'
-branch = 'peaq-polkadot-v0.9.43'
-
-[dependencies.pallet-balances]
-default-features = false
-git = 'https://github.com/peaqnetwork/substrate'
-branch = 'peaq-polkadot-v0.9.43'
+[dependencies]
+sp-std = { git = "https://github.com/peaqnetwork/substrate", branch = "peaq-polkadot-v0.9.43", default-features = false }
+codec = { version = "3.2.2", default-features = false, features = ["derive"], package = "parity-scale-codec" }
+frame-benchmarking = { git = "https://github.com/peaqnetwork/substrate", branch = "peaq-polkadot-v0.9.43", default-features = false, optional = true }
+frame-support = { git = "https://github.com/peaqnetwork/substrate", branch = "peaq-polkadot-v0.9.43", default-features = false }
+frame-system = { git = "https://github.com/peaqnetwork/substrate", branch = "peaq-polkadot-v0.9.43", default-features = false }
+scale-info = { version = "2.1.1", default-features = false, features = ["derive"] }
+sp-core = { git = "https://github.com/peaqnetwork/substrate", branch = "peaq-polkadot-v0.9.43", default-features = false }
+sp-io = { git = "https://github.com/peaqnetwork/substrate", branch = "peaq-polkadot-v0.9.43", default-features = false }
+sp-runtime = { git = "https://github.com/peaqnetwork/substrate", branch = "peaq-polkadot-v0.9.43", default-features = false }
+pallet-balances = { git = "https://github.com/peaqnetwork/substrate", branch = "peaq-polkadot-v0.9.43", default-features = false }
 
 [features]
 default = ['std']
