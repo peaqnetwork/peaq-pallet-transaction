@@ -67,6 +67,7 @@ impl pallet_balances::Config for Test {
     type MaxHolds = ();
     type MaxFreezes = ();
     type RuntimeHoldReason = ();
+    type RuntimeFreezeReason = ();
 }
 
 impl peaq_pallet_transaction::Config for Test {
