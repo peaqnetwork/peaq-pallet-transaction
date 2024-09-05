@@ -13,8 +13,8 @@ mod tests;
 #[cfg(any(feature = "runtime-benchmarks"))]
 mod benchmarking;
 
-pub mod weights;
 pub mod weightinfo;
+pub mod weights;
 pub use weightinfo::WeightInfo;
 
 #[frame_support::pallet]
@@ -60,8 +60,8 @@ pub mod pallet {
         ServiceDelivered {
             provider: T::AccountId,
             consumer: T::AccountId,
-            refund_info: DeliveredInfo<BalanceOf<T>, T::Hash, T::BlockNumber>,
-            spent_info: DeliveredInfo<BalanceOf<T>, T::Hash, T::BlockNumber>,
+            refund_info: DeliveredInfo<BalanceOf<T>, T::Hash, BlockNumberFor<T>>,
+            spent_info: DeliveredInfo<BalanceOf<T>, T::Hash, BlockNumberFor<T>>,
         },
     }
 
@@ -98,8 +98,8 @@ pub mod pallet {
         pub fn service_delivered(
             origin: OriginFor<T>,
             consumer: T::AccountId,
-            refund_info: DeliveredInfo<BalanceOf<T>, T::Hash, T::BlockNumber>,
-            spent_info: DeliveredInfo<BalanceOf<T>, T::Hash, T::BlockNumber>,
+            refund_info: DeliveredInfo<BalanceOf<T>, T::Hash, BlockNumberFor<T>>,
+            spent_info: DeliveredInfo<BalanceOf<T>, T::Hash, BlockNumberFor<T>>,
         ) -> DispatchResult {
             let who = ensure_signed(origin)?;
 
@@ -118,7 +118,7 @@ pub mod pallet {
     }
 
     impl<T: Config> Pallet<T> {
-        pub fn now() -> Timepoint<T::BlockNumber> {
+        pub fn now() -> Timepoint<BlockNumberFor<T>> {
             Timepoint {
                 height: <system::Pallet<T>>::block_number(),
                 index: <system::Pallet<T>>::extrinsic_index().unwrap_or_default(),
