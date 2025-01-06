@@ -6,6 +6,7 @@ use crate::structs::*;
 use crate::Pallet as TransactionPallet;
 use frame_benchmarking::v1::{account, benchmarks, impl_benchmark_test_suite};
 use frame_support::sp_runtime::traits::Hash;
+use frame_system::pallet_prelude::BlockNumberFor;
 use frame_system::{Pallet as System, RawOrigin};
 use sp_io::hashing::blake2_256;
 
@@ -32,7 +33,7 @@ benchmarks! {
         let provider : T::AccountId = account("provider", 0, 0);
         let consumer : T::AccountId = account("consumer", 0, 0);
 
-        let info = DeliveredInfo::<BalanceOf::<T>, T::Hash, T::BlockNumber> {
+        let info = DeliveredInfo::<BalanceOf::<T>, T::Hash, BlockNumberFor<T>> {
             token_num: BalanceOf::<T>::from(25u32),
             tx_hash: T::Hashing::hash_of(&blake2_256(b"tx hash")),
             time_point: TransactionPallet::<T>::now(),
