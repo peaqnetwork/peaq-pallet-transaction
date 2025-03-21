@@ -1,9 +1,6 @@
 use crate as peaq_pallet_transaction;
 
-use frame_support::{parameter_types, derive_impl};
-use frame_system as system;
-use sp_core::H256;
-use sp_runtime::traits::{BlakeTwo256, IdentityLookup};
+use frame_support::{derive_impl, parameter_types};
 use sp_runtime::BuildStorage;
 
 type Block = frame_system::mocking::MockBlock<Test>;
