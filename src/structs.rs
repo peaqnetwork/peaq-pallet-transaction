@@ -1,10 +1,10 @@
-use codec::{Decode, Encode};
+use codec::{Decode, DecodeWithMemTracking, Encode};
 use scale_info::TypeInfo;
 use sp_core::RuntimeDebug;
 
 type CallHash = [u8; 32];
 
-#[derive(Copy, Clone, Eq, PartialEq, Encode, Decode, Default, RuntimeDebug, TypeInfo)]
+#[derive(Copy, Clone, Eq, PartialEq, Encode, Decode, Default, RuntimeDebug, TypeInfo, DecodeWithMemTracking)]
 pub struct Timepoint<BlockNumber> {
     /// The height of the chain at the point in time.
     pub height: BlockNumber,
@@ -12,7 +12,7 @@ pub struct Timepoint<BlockNumber> {
     pub index: u32,
 }
 
-#[derive(Copy, Clone, Eq, PartialEq, Encode, Decode, Default, RuntimeDebug, TypeInfo)]
+#[derive(Copy, Clone, Eq, PartialEq, Encode, Decode, Default, RuntimeDebug, TypeInfo, DecodeWithMemTracking)]
 pub struct DeliveredInfo<Balance, Hash, BlockNumber> {
     pub token_num: Balance,
     pub tx_hash: Hash,
