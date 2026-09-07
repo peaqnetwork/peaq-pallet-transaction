@@ -1,6 +1,5 @@
 use codec::{Decode, DecodeWithMemTracking, Encode};
 use scale_info::TypeInfo;
-use sp_core::RuntimeDebug;
 
 type CallHash = [u8; 32];
 
@@ -12,7 +11,7 @@ type CallHash = [u8; 32];
     Encode,
     Decode,
     Default,
-    RuntimeDebug,
+    Debug,
     TypeInfo,
     DecodeWithMemTracking,
 )]
@@ -31,7 +30,7 @@ pub struct Timepoint<BlockNumber> {
     Encode,
     Decode,
     Default,
-    RuntimeDebug,
+    Debug,
     TypeInfo,
     DecodeWithMemTracking,
 )]
